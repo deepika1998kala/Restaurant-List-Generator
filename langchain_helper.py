@@ -2,15 +2,14 @@ import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain.chains import SequentialChain
+from langchain.chains import LLMChain, SequentialChain
 
 # Load environment variables
 load_dotenv()
 
 # Initialize LLM
 llm = ChatGroq(
-    model="llama3-70b-8192",
+    model="llama-3.1-8b-instant",
     temperature=0.7,
     groq_api_key=os.getenv("GROQ_API_KEY")
 )
